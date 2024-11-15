@@ -47,7 +47,7 @@ ciux ignite --selector build $DIR
 . $CIUXCONFIG
 
 # Build image
-docker image build --tag "$CIUX_IMAGE_URL" "$DIR"
+docker image build --tag "$CIUX_IMAGE_URL" --build-arg hadoop_image="$STACKABLE_HADOOP_IMAGE" "$DIR"
 
 echo "Build successful"
 

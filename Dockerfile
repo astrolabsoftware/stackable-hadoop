@@ -1,4 +1,5 @@
-FROM docker.stackable.tech/stackable/hadoop:3.3.6-stackable24.7.0
+ARG hadoop_image
+FROM ${hadoop_image}
 
 # useradd is not available in above image
 USER root
