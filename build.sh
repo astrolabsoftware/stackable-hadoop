@@ -10,7 +10,7 @@ set -euxo pipefail
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
 # This will avoid overriding user ciuxconfig during a build
-export CIUXCONFIG=$HOME/.ciux/ciux.hadoop.build.sh
+export CIUXCONFIG=$HOME/.ciux/stackable-hadoop.build.sh
 
 usage() {
   cat << EOD
@@ -47,7 +47,7 @@ ciux ignite --selector build $DIR
 . $CIUXCONFIG
 
 # Build image
-docker image build --tag "$CIUX_IMAGE_URL"
+docker image build --tag "$CIUX_IMAGE_URL" "$DIR"
 
 echo "Build successful"
 
