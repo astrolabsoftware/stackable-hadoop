@@ -9,8 +9,7 @@ set -euxo pipefail
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
-# This will avoid overriding user ciuxconfig during a build
-export CIUXCONFIG=$HOME/.ciux/stackable-hadoop.build.sh
+. $DIR/conf.sh
 
 usage() {
   cat << EOD
