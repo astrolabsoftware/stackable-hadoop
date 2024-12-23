@@ -1,12 +1,13 @@
 apiVersion: v1alpha1
 registry: gitlab-registry.in2p3.fr/astrolabsoftware/fink
 sourcePathes:
+  - .ciux
   - Dockerfile
 dependencies:
   - package: github.com/k8s-school/ink@v0.0.1-rc5
     labels:
       itest: "true"
-  - image: docker.stackable.tech/stackable/hadoop:3.3.6-stackable24.7.0
+  - image: docker.stackable.tech/stackable/hadoop:3.3.6-stackable24.11.0
     labels:
       build: "true"
 
