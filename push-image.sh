@@ -9,7 +9,6 @@ set -euxo pipefail
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
 . $DIR/conf.sh
-. "$CIUXCONFIG"
 
 usage() {
   cat << EOD
@@ -43,6 +42,8 @@ if [ $# -ne 0 ] ; then
     usage
     exit 2
 fi
+
+$(ciux get image --check $DIR --env)
 
 if [ $kind = true ]; then
   kind load docker-image "$CIUX_IMAGE_URL"
