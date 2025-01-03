@@ -38,7 +38,6 @@ $(ciux get image --check $DIR --env)
 if [ $CIUX_BUILD = false ];
 then
     echo "Build cancelled, image $CIUX_IMAGE_URL already exists and contains current source code"
-    echo $ignite_msg
     exit 0
 fi
 
